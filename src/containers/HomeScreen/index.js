@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { FloatingAction } from 'react-native-floating-action';
 import SwipeableParallaxCarousel from 'react-native-swipeable-parallax-carousel';
 import ExhibitionList from '../../components/ExhibitionList';
-import { Icon } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 const dataCarousel = [
@@ -28,29 +27,29 @@ const actions = [{
   text: '办展',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
   name: 'bt_accessibility',
-  position: 2
+  position: 2,
+  color: 'rgba(0,0,0,0)'
 }, {
   text: '观展',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
   name: 'bt_language',
-  position: 1
+  position: 1,
+  color: 'rgba(0,0,0,0)'  
 }, {
   text: 'VR',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
   name: 'bt_room',
-  position: 3
+  position: 3,
+  color: 'rgba(0,0,0,0)'
 }, {
   text: '企业文化',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
   name: 'company',
-  position: 4
+  position: 4,
+  color: 'rgba(0,0,0,0)'
 }];
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: '首页',
-    tabBarIcon: () => (<Icon size={24} color="white" name="home" />)
-  }
   render () {
     return (
       <View style={styles.container}>

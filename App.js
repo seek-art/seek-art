@@ -6,6 +6,7 @@ import PersonalScreen from './src/containers/PersonalScreen';
 import CompanyScreen from './src/containers/CompanyScreen';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { NavigationComponent  } from 'react-native-material-bottom-navigation';
+import { Icon } from 'react-native-elements';
 
 const HomeStack = StackNavigator({
   Home: {
@@ -17,16 +18,16 @@ const HomeStack = StackNavigator({
 });
 
 const Root = TabNavigator({
-  首页: {
+  Home: {
     screen: HomeStack
   },
-  社区: {
+  Community: {
     screen: CommunityScreen
   },
-  商场: {
+  Store: {
     screen: MallScreen
   },
-  我的: {
+  Personal: {
     screen: PersonalScreen
   }
 }, {
@@ -34,20 +35,28 @@ const Root = TabNavigator({
   tabBarPosition: 'bottom',
   tabBarOptions: {
     bottomNavigationOptions: {
-      labelColor: 'white',
+      labelColor: '#000',
       rippleColor: 'white',
       tabs: {
-        首页: {
-          barBackgroundColor: '#37474F'
+        Home: {
+          icon: <Icon size={24} color="#000" name="home" />,
+          label: '首页',
+          barBackgroundColor: '#fff'
         },
-        社区: {
-          barBackgroundColor: '#37474F'
+        Community: {
+          icon: <Icon size={24} color="#000" name="forum" />,
+          label: '社区',
+          barBackgroundColor: '#fff'
         },
-        商场: {
-          barBackgroundColor: '#37474F'
+        Store: {
+          icon: <Icon size={24} color="#000" name="store" />,
+          label: '商场',
+          barBackgroundColor: '#fff'
         },
-        我的: {
-          barBackgroundColor: '#37474F'
+        Personal: {
+          icon: <Icon size={24} color="#000" name="account-circle" />,
+          label: '我的',
+          barBackgroundColor: '#fff'
         }
       }
     }
