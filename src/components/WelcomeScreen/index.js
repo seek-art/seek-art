@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import {StyleSheet, View} from 'react-native';
 import { Avatar, Text } from 'react-native-elements';
 import PropTypes from 'prop-types';
+import { NavigationActions } from 'react-navigation';
 
 class WelcomeScreen extends Component {
   componentDidMount () {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'SignIn' })]
+    });
     setTimeout(() => {
-      this.props.navigation.navigate('SignIn');
+      this.props.navigation.dispatch(resetAction);
     }, 1000);
   }
   render () {
