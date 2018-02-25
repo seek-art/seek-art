@@ -5,11 +5,27 @@ import MallScreen from './src/containers/MallScreen';
 import PersonalScreen from './src/containers/PersonalScreen';
 import CompanyScreen from './src/containers/CompanyScreen';
 import CompanyDetail from './src/components/CompanyDetail';
+import SignInScreen from './src/containers/SignInScreen';
+import WelcomeScreen from './src/components/WelcomeScreen';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { NavigationComponent  } from 'react-native-material-bottom-navigation';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
 import { Icon } from 'react-native-elements';
 
 const HomeStack = StackNavigator({
+  Welcome: {
+    screen: WelcomeScreen,
+    navigationOptions: {
+      tabBarVisible: false,
+      header: null
+    }
+  },
+  SignIn: {
+    screen: SignInScreen,
+    navigationOptions: {
+      tabBarVisible: false,
+      header: null
+    }
+  },
   Home: {
     screen: HomeScreen
   },
@@ -19,7 +35,7 @@ const HomeStack = StackNavigator({
   CompanyDetail: {
     screen: CompanyDetail,
     navigationOptions: {
-      tabBarVisible: false 
+      tabBarVisible: false
     }
   }
 });
@@ -46,22 +62,22 @@ const Root = TabNavigator({
       rippleColor: 'white',
       tabs: {
         Home: {
-          icon: <Icon size={24} color="#000" name="home" />,
+          icon: <Icon size={24} color='#000' name='home' />,
           label: '首页',
           barBackgroundColor: '#fff'
         },
         Community: {
-          icon: <Icon size={24} color="#000" name="forum" />,
+          icon: <Icon size={24} color='#000' name='forum' />,
           label: '社区',
           barBackgroundColor: '#fff'
         },
         Store: {
-          icon: <Icon size={24} color="#000" name="store" />,
+          icon: <Icon size={24} color='#000' name='store' />,
           label: '商场',
           barBackgroundColor: '#fff'
         },
         Personal: {
-          icon: <Icon size={24} color="#000" name="account-circle" />,
+          icon: <Icon size={24} color='#000' name='account-circle' />,
           label: '我的',
           barBackgroundColor: '#fff'
         }
