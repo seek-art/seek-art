@@ -72,28 +72,30 @@ const list = [
 ];
 
 class CompanyScreen extends Component {
+  itemOnPress = () => {
+    this.props.navigation.navigate('CompanyDetail');
+  }
   render () {
     return (
       <View style={styles.container}>
-        <List>
-          <FlatList
-            data={list}
-            renderItem={
-              ({item, i}) => (
-                <ListItem
-                  key={i}
-                  title={item.name}
-                  subtitle={item.subtitle}
-                  avatar={{ uri: item.avatar_url }}
-                  containerStyle={{}}
-                  subtitleNumberOfLines={2}
-                  avatarStyle={{ height: 50, width: 80 }}
-                  avatarContainerStyle={{ height: 50, width: 80 }}
-                />
-              )
-            }
-          />
-        </List>
+        <FlatList
+          data={list}
+          renderItem={
+            ({item, i}) => (
+              <ListItem
+                key={i}
+                onPress={this.itemOnPress}
+                title={item.name}
+                subtitle={item.subtitle}
+                avatar={{ uri: item.avatar_url }}
+                containerStyle={{ backgroundColor: '#fff' }}
+                subtitleNumberOfLines={2}
+                avatarStyle={{ height: 50, width: 80 }}
+                avatarContainerStyle={{ height: 50, width: 80 }}
+              />
+            )
+          }
+        />
       </View>
     );
   }

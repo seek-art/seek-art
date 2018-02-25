@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { FloatingAction } from 'react-native-floating-action';
-import SwipeableParallaxCarousel from 'react-native-swipeable-parallax-carousel';
+import Carousel from 'react-native-smart-carousel';
 import ExhibitionList from '../../components/ExhibitionList';
 import PropTypes from 'prop-types';
 
@@ -53,10 +53,11 @@ export default class HomeScreen extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <SwipeableParallaxCarousel
+        <Carousel
           data={dataCarousel}
           navigation
           titleColor='#fff'
+          autoPlay
         />
         <ExhibitionList />
         <FloatingAction

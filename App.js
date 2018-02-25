@@ -4,6 +4,7 @@ import CommunityScreen from './src/containers/CommunityScreen';
 import MallScreen from './src/containers/MallScreen';
 import PersonalScreen from './src/containers/PersonalScreen';
 import CompanyScreen from './src/containers/CompanyScreen';
+import CompanyDetail from './src/components/CompanyDetail';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { NavigationComponent  } from 'react-native-material-bottom-navigation';
 import { Icon } from 'react-native-elements';
@@ -14,6 +15,12 @@ const HomeStack = StackNavigator({
   },
   Company: {
     screen: CompanyScreen
+  },
+  CompanyDetail: {
+    screen: CompanyDetail,
+    navigationOptions: {
+      tabBarVisible: false 
+    }
   }
 });
 
