@@ -32,7 +32,7 @@ class SignInScreen extends Component {
             height: 45,
             borderColor: 'transparent',
             borderWidth: 0,
-            marginTop: 35,
+            marginTop: 35
           }}
         />
         <Button

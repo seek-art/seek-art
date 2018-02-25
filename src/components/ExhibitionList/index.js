@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import ExhibitionCard from '../ExhibitionCard';
 import { View, FlatList, StyleSheet } from 'react-native';
 
-
 class ExhibitionList extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <FlatList
@@ -22,9 +21,8 @@ class ExhibitionList extends Component {
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-  },
-})
-
+    flex: 1
+  }
+});
 
 export default ExhibitionList;

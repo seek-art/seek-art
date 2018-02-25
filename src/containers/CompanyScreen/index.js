@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import { List, ListItem } from 'react-native-elements';
+import React, {Component} from 'react';
+import {View, FlatList, StyleSheet} from 'react-native';
+import {ListItem} from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 const list = [
   {
@@ -38,32 +39,32 @@ const list = [
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: ',',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: 'm',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: 'n',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: 'b',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: 'v',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman'
-  },{
+  }, {
     key: 'c',
     name: 'Tecent',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
@@ -74,7 +75,8 @@ const list = [
 class CompanyScreen extends Component {
   itemOnPress = () => {
     this.props.navigation.navigate('CompanyDetail');
-  }
+  };
+
   render () {
     return (
       <View style={styles.container}>
@@ -87,11 +89,11 @@ class CompanyScreen extends Component {
                 onPress={this.itemOnPress}
                 title={item.name}
                 subtitle={item.subtitle}
-                avatar={{ uri: item.avatar_url }}
-                containerStyle={{ backgroundColor: '#fff' }}
+                avatar={{uri: item.avatar_url}}
+                containerStyle={{backgroundColor: '#fff'}}
                 subtitleNumberOfLines={2}
-                avatarStyle={{ height: 50, width: 80 }}
-                avatarContainerStyle={{ height: 50, width: 80 }}
+                avatarStyle={{height: 50, width: 80}}
+                avatarContainerStyle={{height: 50, width: 80}}
               />
             )
           }
@@ -103,8 +105,12 @@ class CompanyScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-  },
-})
+    flex: 1
+  }
+});
+
+CompanyScreen.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default CompanyScreen;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { FloatingAction } from 'react-native-floating-action';
 import Carousel from 'react-native-smart-carousel';
 import ExhibitionList from '../../components/ExhibitionList';
@@ -34,7 +34,7 @@ const actions = [{
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
   name: 'bt_language',
   position: 1,
-  color: 'rgba(0,0,0,0)'  
+  color: 'rgba(0,0,0,0)'
 }, {
   text: 'VR',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
