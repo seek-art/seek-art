@@ -15,7 +15,7 @@ const dataCarousel = [
 ];
 
 class CompanyDetail extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Carousel
@@ -29,12 +29,12 @@ class CompanyDetail extends Component {
         <View style={styles.buttonContainer}>
           <Button
             title='模拟场景'
-            textStyle={{ color: '#fff', fontWeight: "700" }}
+            textStyle={{ color: '#fff', fontWeight: '700' }}
             buttonStyle={{
-              backgroundColor: "#000",
+              backgroundColor: '#000',
               width: 130,
               height: 30,
-              borderColor: "transparent",
+              borderColor: 'transparent',
               borderWidth: 0,
               borderRadius: 5
             }}
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    marginTop : 20,
+    marginTop: 20,
     paddingLeft: 10,
-    paddingRight: 10,
+    paddingRight: 10
   },
   buttonContainer: {
-    shadowOffset:{
+    shadowOffset: {
       width: 0,
-      height: -2,
+      height: -2
     },
     shadowColor: 'black',
     shadowOpacity: 1.0,
@@ -68,6 +68,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   }
 });
-
 
 export default CompanyDetail;
