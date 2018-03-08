@@ -26,7 +26,7 @@ const dataCarousel = [
 const actions = [{
   text: '办展',
   icon: { uri: 'https://www.materialui.co/materialIcons/action/account_circle_grey_192x192.png' },
-  name: 'bt_accessibility',
+  name: 'create-exhibition',
   position: 2,
   color: 'rgba(0,0,0,0)'
 }, {
@@ -67,6 +67,9 @@ export default class HomeScreen extends React.Component {
               switch (name) {
                 case ('company'):
                   this.props.navigation.navigate('Company');
+                  break;
+                case ('create-exhibition'):
+                  this.props.navigation.navigate('CreateExhibition');
                   break;
                 default:
                   break;

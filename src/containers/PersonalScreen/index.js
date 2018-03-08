@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { View, StyleSheet, Image, FlatList } from 'react-native';
+import {View, StyleSheet, Image, FlatList, TouchableWithoutFeedback} from 'react-native';
 import {ListItem, Avatar, Text, Icon} from 'react-native-elements';
+import PropTypes from 'prop-types';
 
 const settingsList = [
   {
@@ -51,6 +52,10 @@ const settingsList = [
 ];
 
 class PersonalScreen extends Component {
+  onPressMessageBtn = () => {
+    this.props.navigation.navigate('Message');
+  };
+
   render () {
     return (
       <View style={styles.container}>
@@ -93,25 +98,31 @@ class PersonalScreen extends Component {
           <Icon name='keyboard-arrow-right' color='#858585' iconStyle={{marginRight: 10}} />
         </View>
         <View style={styles.userStatics}>
-          <View style={styles.userStaticsItem}>
-            <Text>69</Text>
-            <Text>关注</Text>
-          </View>
-          <View style={styles.userStaticsItem}>
-            <Text>78</Text>
-            <Text>粉丝</Text>
-          </View>
-          <View style={styles.userStaticsItem}>
-            <Text>35</Text>
-            <Text>消息</Text>
-          </View>
+          <TouchableWithoutFeedback style={styles.userStaticsItem}>
+            <View>
+              <Text>69</Text>
+              <Text>关注</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback style={styles.userStaticsItem}>
+            <View>
+              <Text>78</Text>
+              <Text>粉丝</Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback style={styles.userStaticsItem} onPress={this.onPressMessageBtn}>
+            <View>
+              <Text>35</Text>
+              <Text>消息</Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
         <View style={styles.listContainer}>
           <FlatList
             data={settingsList}
             renderItem={
               ({item, i}) => (
-                <ListItem key={i} title={item.title} titleStyle={{ color: '#000' }} />
+                <ListItem key={i} title={item.title} titleStyle={{color: '#000'}} />
               )
             }
           />
@@ -155,5 +166,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   }
 });
+
+PersonalScreen.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default PersonalScreen;

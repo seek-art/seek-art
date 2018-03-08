@@ -3,10 +3,12 @@ import HomeScreen from './src/containers/HomeScreen';
 import CommunityScreen from './src/containers/CommunityScreen';
 import MallScreen from './src/containers/MallScreen';
 import PersonalScreen from './src/containers/PersonalScreen';
-import CompanyScreen from './src/containers/CompanyScreen';
+import CompanyScreen from './src/containers/HomeScreen/CompanyScreen';
+import CreateExhibitionScreen from './src/containers/HomeScreen/CreateExhibitionScreen';
 import CompanyDetail from './src/components/CompanyDetail';
 import SignInScreen from './src/containers/SignInScreen';
 import WelcomeScreen from './src/components/WelcomeScreen';
+import MessageScreen from './src/containers/PersonalScreen/MessageScreen';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { NavigationComponent } from 'react-native-material-bottom-navigation';
 import { Icon } from 'react-native-elements';
@@ -37,6 +39,18 @@ const HomeStack = StackNavigator({
     navigationOptions: {
       tabBarVisible: false
     }
+  },
+  CreateExhibition: {
+    screen: CreateExhibitionScreen
+  }
+});
+
+const PersonalStack = StackNavigator({
+  Personal: {
+    screen: PersonalScreen
+  },
+  Message: {
+    screen: MessageScreen
   }
 });
 
@@ -51,7 +65,7 @@ const Root = TabNavigator({
     screen: MallScreen
   },
   Personal: {
-    screen: PersonalScreen
+    screen: PersonalStack
   }
 }, {
   tabBarComponent: NavigationComponent,
