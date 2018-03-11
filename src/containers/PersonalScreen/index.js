@@ -54,64 +54,68 @@ const settingsList = [
 class PersonalScreen extends Component {
   onPressMessageBtn = () => {
     this.props.navigation.navigate('Message');
-  };
-
+  }
+  onPressPersonalInfo = () => {
+    this.props.navigation.navigate('PersonalProfile');
+  }
   render () {
     return (
       <View style={styles.container}>
-        <View style={styles.userInfo}>
-          <View
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%'
-            }}
-          >
-            <Image
+        <TouchableWithoutFeedback onPress={this.onPressPersonalInfo}>
+          <View style={styles.userInfo}>
+            <View
               style={{
-                flex: 1
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%'
               }}
-              source={{uri: 'https://s15.postimg.org/tw2qkvmcb/400px.png'}}
-            />
-          </View>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Avatar
-              width={110}
-              height={110}
-              rounded
-              source={require('../../images/logo.png')}
-              containerStyle={styles.avatar}
-              overlayContainerStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
-              activeOpacity={0.7}
-            />
-            <View>
-              <Text h4>
-                琪琪
-              </Text>
-              <Text style={styles.id}>
-                id: 0100
-              </Text>
+            >
+              <Image
+                style={{
+                  flex: 1
+                }}
+                source={{uri: 'https://s15.postimg.org/tw2qkvmcb/400px.png'}}
+              />
             </View>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <Avatar
+                width={110}
+                height={110}
+                rounded
+                source={require('../../images/logo.png')}
+                containerStyle={styles.avatar}
+                overlayContainerStyle={{backgroundColor: 'rgba(0, 0, 0, 0)'}}
+                activeOpacity={0.7}
+              />
+              <View>
+                <Text h4>
+                  琪琪
+                </Text>
+                <Text style={styles.id}>
+                  id: 0100
+                </Text>
+              </View>
+            </View>
+            <Icon name='keyboard-arrow-right' color='#858585' iconStyle={{marginRight: 10}} />
           </View>
-          <Icon name='keyboard-arrow-right' color='#858585' iconStyle={{marginRight: 10}} />
-        </View>
+        </TouchableWithoutFeedback>
         <View style={styles.userStatics}>
-          <TouchableWithoutFeedback style={styles.userStaticsItem}>
-            <View>
+          <TouchableWithoutFeedback>
+            <View style={styles.userStaticsItem}>
               <Text>69</Text>
               <Text>关注</Text>
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback style={styles.userStaticsItem}>
-            <View>
+          <TouchableWithoutFeedback>
+            <View style={styles.userStaticsItem}>
               <Text>78</Text>
               <Text>粉丝</Text>
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback style={styles.userStaticsItem} onPress={this.onPressMessageBtn}>
-            <View>
+          <TouchableWithoutFeedback onPress={this.onPressMessageBtn}>
+            <View style={styles.userStaticsItem}>
               <Text>35</Text>
               <Text>消息</Text>
             </View>

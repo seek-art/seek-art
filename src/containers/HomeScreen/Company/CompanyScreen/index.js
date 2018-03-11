@@ -85,7 +85,7 @@ class CompanyScreen extends Component {
           renderItem={
             ({item, i}) => (
               <ListItem
-                key={i}
+                key={item.key}
                 onPress={this.itemOnPress}
                 title={item.name}
                 subtitle={item.subtitle}

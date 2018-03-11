@@ -3,8 +3,11 @@ import HomeScreen from './src/containers/HomeScreen';
 import CommunityScreen from './src/containers/CommunityScreen';
 import MallScreen from './src/containers/MallScreen';
 import PersonalScreen from './src/containers/PersonalScreen';
-import CompanyScreen from './src/containers/HomeScreen/CompanyScreen';
-import CreateExhibitionScreen from './src/containers/HomeScreen/CreateExhibitionScreen';
+import PersonalProfile from './src/containers/PersonalScreen/PersonalProfile';
+import CompanyScreen from './src/containers/HomeScreen/Company/CompanyScreen';
+import CreateExhibitionScreen from './src/containers/HomeScreen/Exhibition/CreateExhibitionScreen';
+import TemplatesScreen from './src/containers/HomeScreen/Exhibition/TemplatesScreen';
+import TemplateDetail from './src/containers/HomeScreen/Exhibition/TemplateDetail';
 import CompanyDetail from './src/components/CompanyDetail';
 import SignInScreen from './src/containers/SignInScreen';
 import WelcomeScreen from './src/components/WelcomeScreen';
@@ -42,6 +45,15 @@ const HomeStack = StackNavigator({
   },
   CreateExhibition: {
     screen: CreateExhibitionScreen
+  },
+  Templates: {
+    screen: TemplatesScreen
+  },
+  TemplateDetail: {
+    screen: TemplateDetail,
+    navigationOptions: {
+      tabBarVisible: false
+    }
   }
 });
 
@@ -51,6 +63,9 @@ const PersonalStack = StackNavigator({
   },
   Message: {
     screen: MessageScreen
+  },
+  PersonalProfile: {
+    screen: PersonalProfile
   }
 });
 

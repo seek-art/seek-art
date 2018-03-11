@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
 import { Button } from 'react-native-elements';
 import t from 'tcomb-form-native';
+import PropTypes from 'prop-types';
 
 const Form = t.form.Form;
 
@@ -56,6 +57,7 @@ class CreateExhibitionScreen extends Component {
   onPress = () => {
     const value = this.refs.form.getValue();
     if (value) console.log(value);
+    this.props.navigation.navigate('Templates');
   }
 
   render () {
@@ -69,6 +71,7 @@ class CreateExhibitionScreen extends Component {
           />
           <Button
             title='下一步'
+            onPress={this.onPress}
             textStyle={{ color: '#fff', fontWeight: '700' }}
             buttonStyle={{
               backgroundColor: '#000',
@@ -92,5 +95,9 @@ const styles = StyleSheet.create({
     padding: 20
   }
 });
+
+CreateExhibitionScreen.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
 
 export default CreateExhibitionScreen;
