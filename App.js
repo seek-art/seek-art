@@ -8,6 +8,8 @@ import CompanyScreen from './src/containers/HomeScreen/Company/CompanyScreen';
 import CreateExhibitionScreen from './src/containers/HomeScreen/Exhibition/CreateExhibitionScreen';
 import TemplatesScreen from './src/containers/HomeScreen/Exhibition/TemplatesScreen';
 import TemplateDetail from './src/containers/HomeScreen/Exhibition/TemplateDetail';
+import SettingsScreen from './src/containers/PersonalScreen/SettingsScreen';
+import PwdModifying from './src/containers/PersonalScreen/PwdModifying';
 import CompanyDetail from './src/components/CompanyDetail';
 import SignInScreen from './src/containers/SignInScreen';
 import WelcomeScreen from './src/components/WelcomeScreen';
@@ -66,6 +68,12 @@ const PersonalStack = StackNavigator({
   },
   PersonalProfile: {
     screen: PersonalProfile
+  },
+  Settings: {
+    screen: SettingsScreen
+  },
+  PwdModifying: {
+    screen: PwdModifying
   }
 });
 

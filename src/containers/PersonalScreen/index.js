@@ -45,9 +45,9 @@ const settingsList = [
     screen: 'orders'
   },
   {
-    key: 9,
+    key: 'Settings',
     title: '设置',
-    screen: 'settings'
+    screen: 'Settings'
   }
 ];
 
@@ -126,7 +126,11 @@ class PersonalScreen extends Component {
             data={settingsList}
             renderItem={
               ({item, i}) => (
-                <ListItem key={i} title={item.title} titleStyle={{color: '#000'}} />
+                <ListItem
+                  key={item.key}
+                  title={item.title}
+                  titleStyle={{color: '#000'}}
+                  onPress={() => this.props.navigation.navigate(item.screen)} />
               )
             }
           />

@@ -47,13 +47,13 @@ class CreateExhibitionScreen extends Component {
       width: '',
       height: ''
     }
-  };
+  }
   static navigationOptions = {
     title: '申请',
     headerTitleStyle: {
       fontWeight: 'bold'
     }
-  };
+  }
   onPress = () => {
     const value = this.refs.form.getValue();
     if (value) console.log(value);
